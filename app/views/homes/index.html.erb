@@ -9,8 +9,9 @@
   </div>
 
   <div class="top-actions">
-    <%= link_to "新規登録", "#" %>
-    <%= link_to "ログイン", "#" %>
+    <% if user_signed_in? %>
+      <%= link_to "御朱印一覧へ", "#" %>
+    <% end %>
   </div>
 
   <section class="feature-section">
