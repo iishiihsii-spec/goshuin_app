@@ -1,0 +1,102 @@
+.devise-page {
+  min-height: 100vh;
+  background-color: #f7efe3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+.devise-card {
+  width: 100%;
+  max-width: 460px;
+  background-color: #fffaf0;
+  border: 1px solid #d8c6a4;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 12px 30px rgba(59, 47, 47, 0.15);
+}
+
+.devise-title {
+  text-align: center;
+  font-size: 32px;
+  color: #8b1e1e;
+  margin-bottom: 32px;
+  font-weight: bold;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field label {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #3b2f2f;
+  font-weight: bold;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #c9b89f;
+  border-radius: 10px;
+  background-color: #fff;
+  font-size: 16px;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #8b1e1e;
+  box-shadow: 0 0 0 3px rgba(139, 30, 30, 0.15);
+}
+
+.field em {
+  font-size: 13px;
+  color: #7a6652;
+}
+
+.remember-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.remember-field label {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+.devise-submit {
+  width: 100%;
+  background-color: #8b1e1e;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.devise-submit:hover {
+  opacity: 0.85;
+}
+
+.devise-links {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.devise-links a {
+  color: #8b1e1e;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.devise-links p {
+  margin-top: 10px;
+}
