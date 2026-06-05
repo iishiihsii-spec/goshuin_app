@@ -12,6 +12,7 @@
  *
  *= require reset
  *= require devise
+ *= require flash
  *= require home
  *= require_self
  */
