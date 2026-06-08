@@ -8,11 +8,22 @@
     </div>
   </div>
 
-  <div class="top-actions">
-    <% if user_signed_in? %>
-      <%= link_to "御朱印一覧へ", "#" %>
-    <% end %>
-  </div>
+ <section class="top-book-section">
+    <div class="top-book-cover"></div>
+
+    <div class="top-book-info">
+      <% if user_signed_in? %>
+        <h2><%= current_user.nickname %>さんの御朱印帳</h2>
+        <p>集めた御朱印を見返して、旅の記録を楽しみましょう。</p>
+        <%= link_to "御朱印帳を開く", goshuins_path, class: "top-book-button" %>
+      <% else %>
+        <h2>自分だけの御朱印帳を作ろう</h2>
+        <p>御朱印を写真・参拝日・場所と一緒に記録できます。</p>
+        <%= link_to "新規登録して始める", new_user_registration_path, class: "top-book-button" %>
+      <% end %>
+    </div>
+  </section>
+
 
   <section class="feature-section">
     <h2>御朱印クエストでできること</h2>

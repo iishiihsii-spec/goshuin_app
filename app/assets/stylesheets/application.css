@@ -15,5 +15,6 @@
  *= require devise
  *= require flash
  *= require home
+ *= require goshuins
  *= require_self
  */

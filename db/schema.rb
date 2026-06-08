@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2026_06_05_032026) do
+ActiveRecord::Schema[7.1].define(version: 2026_06_08_052337) do
+  create_table "goshuins", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "place_name", null: false
+    t.date "visited_date", null: false
+    t.integer "category_id", null: false
+    t.text "memo"
+    t.decimal "latitude", precision: 10, scale: 6
+    t.decimal "longitude", precision: 10, scale: 6
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_goshuins_on_user_id"
+  end
+
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
@@ -24,4 +37,5 @@ ActiveRecord::Schema[7.1].define(version: 2026_06_05_032026) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "goshuins", "users"
 end

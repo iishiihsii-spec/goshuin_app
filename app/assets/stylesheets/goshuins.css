@@ -1,0 +1,184 @@
+.goshuin-index-page {
+  min-height: 100vh;
+  background-color: #f7efe3;
+  padding: 48px 24px;
+  color: #3b2f2f;
+}
+
+.goshuin-cover {
+  width: 360px;
+  height: 520px;
+  margin: 0 auto 48px;
+  border-radius: 18px;
+  background-image: url("goshuin_cover.png");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 12px 28px rgba(59, 47, 47, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.goshuin-cover-info {
+  background-color: rgba(255, 250, 240, 0.86);
+  padding: 32px 40px;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid #d8c6a4;
+}
+
+.goshuin-cover-user {
+  font-size: 26px;
+  font-weight: bold;
+  color: #8b1e1e;
+  margin-bottom: 16px;
+}
+
+.goshuin-cover-count {
+  font-size: 18px;
+  color: #5c3b22;
+  margin-bottom: 24px;
+}
+
+.goshuin-register-link {
+  display: inline-block;
+}
+
+.goshuin-register-button {
+  display: inline-block;
+  background-color: #8b1e1e;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.goshuin-book-area {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: #fffaf0;
+  border: 1px solid #d8c6a4;
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.goshuin-card-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.goshuin-card {
+  background-color: #fff;
+  border: 1px solid #d8c6a4;
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.goshuin-place-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #8b1e1e;
+  margin-bottom: 16px;
+}
+
+.goshuin-visited-date,
+.goshuin-category,
+.goshuin-memo {
+  margin-bottom: 10px;
+}
+
+.goshuin-empty-message {
+  text-align: center;
+  color: #7a6652;
+  font-weight: bold;
+  padding: 48px 24px;
+}
+
+/* 御朱印登録ページ */
+.goshuin-form-title {
+  text-align: center;
+  font-size: 28px;
+  color: #8b1e1e;
+  margin-bottom: 32px;
+  font-weight: bold;
+}
+
+.goshuin-form-page {
+  min-height: 100vh;
+  background-color: #f7efe3;
+  padding: 56px 24px;
+  color: #3b2f2f;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+.goshuin-form-card {
+  max-width: 560px;
+  margin: 0 auto;
+  background-color: #fffaf0;
+  border: 1px solid #d8c6a4;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 24px rgba(59, 47, 47, 0.14);
+}
+
+.goshuin-form-group {
+  margin-bottom: 24px;
+}
+
+.goshuin-form-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #5c3b22;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.goshuin-form-input,
+.goshuin-form-select,
+.goshuin-form-textarea {
+  width: 100%;
+  border: 1px solid #c9b89f;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 12px 14px;
+  font-size: 16px;
+  color: #3b2f2f;
+  box-sizing: border-box;
+}
+
+.goshuin-form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.goshuin-form-input:focus,
+.goshuin-form-select:focus,
+.goshuin-form-textarea:focus {
+  outline: none;
+  border-color: #8b1e1e;
+  box-shadow: 0 0 0 3px rgba(139, 30, 30, 0.15);
+}
+
+.goshuin-form-submit {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.goshuin-form-submit input {
+  background-color: #8b1e1e;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 40px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  transition: 0.2s;
+}
+
+.goshuin-form-submit input:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
