@@ -4,6 +4,6 @@ class Category < ActiveHash::Base
     { id: 2, name: '神社' },
     { id: 3, name: 'お寺' }
   ]
-  Include ActiveHash::Associations
+  include ActiveHash::Associations
   has_many :goshuins
 end
