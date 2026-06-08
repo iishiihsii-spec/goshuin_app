@@ -1,13 +1,14 @@
 <div class="goshuin-form-page">
   <div class="goshuin-form-card">
+    <h1 class="goshuin-form-title">御朱印を登録する</h1>
     <%= form_with model: @goshuin, local: true do |f| %>
       <div class="goshuin-form-group">
-        <%= f.label :place_name, "神社orお寺の名前", class: "goshuin-form-label" %>
+        <%= f.label :place_name, "参拝した神社・お寺", class: "goshuin-form-label" %>
         <%= f.text_field :place_name, class: "goshuin-form-input" %>
       </div>
 
       <div class="goshuin-form-group">
-        <%= f.label :visited_date, "日付", class: "goshuin-form-label" %>
+        <%= f.label :visited_date, "参拝日", class: "goshuin-form-label" %>
         <%= f.date_field :visited_date, class: "goshuin-form-input" %>
       </div>
 
@@ -17,14 +18,14 @@
       </div>
 
       <div class="goshuin-form-group">
-        <%= f.label :memo, "メモ", class: "goshuin-form-label" %>
+        <%= f.label :memo, "参拝メモ", class: "goshuin-form-label" %>
         <%= f.text_area :memo, class: "goshuin-form-textarea" %>
       </div>
 
       <div class="goshuin-form-submit">
         <%= f.submit "登録" %>
       </div>
-      
+
     <% end %>
   </div>
 </div>
