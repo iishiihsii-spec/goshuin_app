@@ -1,1 +1,47 @@
-<h1>御朱印一覧</h1>
+<div class="goshuin-index-page">
+  <div class="goshuin-cover">
+    <div class="goshuin-cover-info">
+      <div class="goshuin-cover-user">
+        <%= current_user.nickname %>さんの御朱印帳
+      </div>
+
+      <div class="goshuin-cover-count">
+        登録数：<%= @goshuins.count %>件
+      </div>
+
+      <%= link_to new_goshuin_path, class: "goshuin-register-link" do %>
+        <span class="goshuin-register-button">御朱印を登録する</span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="goshuin-book-area">
+    <% if @goshuins.any? %>
+      <div class="goshuin-card-list">
+        <% @goshuins.each do |goshuin| %>
+          <div class="goshuin-card">
+            <div class="goshuin-place-name">
+              <%= goshuin.place_name %>
+            </div>
+
+            <div class="goshuin-visited-date">
+              参拝日：<%= goshuin.visited_date %>
+            </div>
+
+            <div class="goshuin-category">
+              種類：<%= goshuin.category.name %>
+            </div>
+
+            <div class="goshuin-memo">
+              <%= goshuin.memo %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="goshuin-empty-message">
+        まだ御朱印が登録されていません
+      </div>
+    <% end %>
+  </div>
+</div>

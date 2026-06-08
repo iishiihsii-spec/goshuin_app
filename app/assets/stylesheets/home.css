@@ -38,22 +38,66 @@
   font-weight: bold;
 }
 
-/* ボタン */
-.top-actions {
+/* トップページの御朱印帳導線 */
+.top-book-section {
+  max-width: 900px;
+  margin: 56px auto;
+  padding: 32px;
+  background-color: #fffaf0;
+  border: 1px solid #d8c6a4;
+  border-radius: 24px;
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 20px;
-  margin: 40px 0;
+  gap: 48px;
+  box-shadow: 0 10px 24px rgba(59, 47, 47, 0.12);
   font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
 }
 
-.top-actions a {
-  text-decoration: none;
+.top-book-cover {
+  width: 220px;
+  height: 320px;
+  background-image: url("goshuin_cover.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(59, 47, 47, 0.25);
+  flex-shrink: 0;
+}
+
+.top-book-info {
+  max-width: 420px;
+  text-align: left;
+}
+
+.top-book-info h2 {
+  font-size: 28px;
+  color: #8b1e1e;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.top-book-info p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #5c3b22;
+  margin-bottom: 24px;
+}
+
+.top-book-button {
+  display: inline-block;
   background-color: #8b1e1e;
   color: #fff;
-  padding: 12px 32px;
-  border-radius: 24px;
+  padding: 12px 28px;
+  border-radius: 999px;
   font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.top-book-button:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
 }
 
 /* 機能紹介 */
@@ -104,8 +148,28 @@
     font-size: 16px;
   }
 
-  .top-actions {
+  .top-book-section {
     flex-direction: column;
-    align-items: center;
+    text-align: center;
+    padding: 28px 20px;
+    margin: 40px 16px;
+    gap: 28px;
+  }
+
+  .top-book-info {
+    text-align: center;
+  }
+
+  .top-book-cover {
+    width: 190px;
+    height: 280px;
+  }
+
+  .top-book-info h2 {
+    font-size: 24px;
+  }
+
+  .top-book-info p {
+    font-size: 15px;
   }
 }
