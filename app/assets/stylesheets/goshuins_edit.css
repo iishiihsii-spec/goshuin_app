@@ -106,3 +106,21 @@
   opacity: 0.85;
   transform: translateY(-2px);
 }
+
+.goshuin-edit-actions {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.goshuin-delete-link {
+  display: inline-block;
+  padding: 12px 32px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.goshuin-delete-link:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
