@@ -3,6 +3,7 @@ class Goshuin < ApplicationRecord
   # アソシエーション
   belongs_to :user
   belongs_to :category
+  has_one_attached :image
 
   # バリデーション
   validates :place_name, presence: true

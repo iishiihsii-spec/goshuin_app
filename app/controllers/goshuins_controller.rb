@@ -1,7 +1,7 @@
 class GoshuinsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @goshuins = Goshuin.where(user_id: current_user.id)
+    @goshuins = current_user.goshuins.with_attached_image
   end
 
   def new
@@ -25,6 +25,6 @@ class GoshuinsController < ApplicationController
   private
 
   def goshuin_params
-    params.require(:goshuin).permit(:place_name, :visited_date, :category_id, :memo).merge(user_id: current_user.id)
+    params.require(:goshuin).permit(:place_name, :visited_date, :category_id, :memo, :image).merge(user_id: current_user.id)
   end
 end

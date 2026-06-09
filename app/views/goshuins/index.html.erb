@@ -19,8 +19,19 @@
     <% if @goshuins.any? %>
       <div class="goshuin-card-list">
         <% @goshuins.each do |goshuin| %>
-          <%= link_to goshuin_path(goshuin.id) do %>
+          <%= link_to goshuin_path(goshuin), class: "goshuin-card-link" do %>
             <div class="goshuin-card">
+
+              <% if goshuin.image.attached? %>
+                <div class="goshuin-card-image">
+                  <%= image_tag goshuin.image %>
+                </div>
+              <% else %>
+                <div class="goshuin-card-no-image">
+                  画像は登録されていません
+                </div>
+              <% end %>
+
               <div class="goshuin-place-name">
                 <%= goshuin.place_name %>
               </div>

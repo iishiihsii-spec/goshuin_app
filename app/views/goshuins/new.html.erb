@@ -3,6 +3,11 @@
     <h1 class="goshuin-form-title">御朱印を登録する</h1>
     <%= form_with model: @goshuin, local: true do |f| %>
       <div class="goshuin-form-group">
+        <%= f.label :image, "御朱印の写真", class: "goshuin-form-label" %>
+        <%= f.file_field :image, class: "goshuin-form-input" %>
+      </div>
+
+      <div class="goshuin-form-group">
         <%= f.label :place_name, "参拝した神社・お寺", class: "goshuin-form-label" %>
         <%= f.text_field :place_name, class: "goshuin-form-input" %>
       </div>
