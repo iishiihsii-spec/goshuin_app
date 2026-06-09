@@ -37,6 +37,13 @@ class GoshuinsController < ApplicationController
   end
 
   def destroy
+    @goshuin = current_user.goshuins.find(params[:id])
+    if @goshuin.destroy
+      redirect_to goshuins_path, notice: "御朱印を削除しました"
+    else
+      flash.now[:alert] = "御朱印の削除に失敗しました"
+      render :edit, status: :unprocessable_entity
+    end
   end
   private
 
