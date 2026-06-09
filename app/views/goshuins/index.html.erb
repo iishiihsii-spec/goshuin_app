@@ -19,23 +19,25 @@
     <% if @goshuins.any? %>
       <div class="goshuin-card-list">
         <% @goshuins.each do |goshuin| %>
-          <div class="goshuin-card">
-            <div class="goshuin-place-name">
-              <%= goshuin.place_name %>
-            </div>
+          <%= link_to goshuin_path(goshuin.id) do %>
+            <div class="goshuin-card">
+              <div class="goshuin-place-name">
+                <%= goshuin.place_name %>
+              </div>
 
-            <div class="goshuin-visited-date">
-              参拝日：<%= goshuin.visited_date %>
-            </div>
+              <div class="goshuin-visited-date">
+                参拝日：<%= goshuin.visited_date %>
+              </div>
 
-            <div class="goshuin-category">
-              種類：<%= goshuin.category.name %>
-            </div>
+              <div class="goshuin-category">
+                種類：<%= goshuin.category.name %>
+              </div>
 
-            <div class="goshuin-memo">
-              <%= goshuin.memo %>
+              <div class="goshuin-memo">
+                <%= goshuin.memo %>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       </div>
     <% else %>

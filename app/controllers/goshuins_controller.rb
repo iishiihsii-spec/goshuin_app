@@ -7,7 +7,11 @@ class GoshuinsController < ApplicationController
   def new
     @goshuin = Goshuin.new
   end
-  
+
+  def show
+    @goshuin = current_user.goshuins.find(params[:id])
+  end
+
   def create
     @goshuin = Goshuin.new(goshuin_params)
     if @goshuin.save
