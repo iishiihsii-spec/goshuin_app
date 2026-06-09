@@ -1,0 +1,45 @@
+<div class="goshuin-edit-page">
+  <div class="goshuin-form-card">
+    <h1 class="goshuin-edit-title">御朱印を編集する</h1>
+    <%= form_with model: @goshuin, local: true do |f| %>
+      <% if @goshuin.image.attached? %>
+        <div class="goshuin-edit-image">
+          <%= image_tag @goshuin.image %>
+        </div>
+      <% else %>
+        <div class="goshuin-edit-no-image">
+          画像は登録されていません
+        </div>
+      <% end %>
+      <div class="goshuin-edit-group">
+        <%= f.label :image, "御朱印の写真", class: "goshuin-edit-label" %>
+        <%= f.file_field :image, class: "goshuin-edit-input" %>
+      </div>
+
+      <div class="goshuin-edit-group">
+        <%= f.label :place_name, "参拝した神社・お寺", class: "goshuin-edit-label" %>
+        <%= f.text_field :place_name, class: "goshuin-edit-input" %>
+      </div>
+
+      <div class="goshuin-edit-group">
+        <%= f.label :visited_date, "参拝日", class: "goshuin-edit-label" %>
+        <%= f.date_field :visited_date, class: "goshuin-edit-input" %>
+      </div>
+
+      <div class="goshuin-edit-group">
+        <%= f.label :category_id, "種類", class: "goshuin-edit-label" %>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"goshuin-edit-select"}) %>
+      </div>
+
+      <div class="goshuin-edit-group">
+        <%= f.label :memo, "参拝メモ", class: "goshuin-edit-label" %>
+        <%= f.text_area :memo, class: "goshuin-edit-textarea" %>
+      </div>
+
+      <div class="goshuin-edit-submit">
+        <%= f.submit "更新" %>
+      </div>
+
+    <% end %>
+  </div>
+</div>

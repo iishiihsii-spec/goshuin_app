@@ -29,6 +29,9 @@
     </div>
 
     <div class="goshuin-show-actions">
+      <%= link_to "編集する", edit_goshuin_path(@goshuin), class: "goshuin-edit-link" %>
+    </div>
+    <div class="goshuin-show-actions">
       <%= link_to "御朱印帳に戻る", goshuins_path, class: "goshuin-back-link" %>
     </div>
   </div>
