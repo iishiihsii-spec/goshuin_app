@@ -1,5 +1,14 @@
 <div class="goshuin-show-page">
   <div class="goshuin-show-card">
+    <% if @goshuin.image.attached? %>
+      <div class="goshuin-show-image">
+        <%= image_tag @goshuin.image %>
+      </div>
+    <% else %>
+      <div class="goshuin-show-no-image">
+        画像は登録されていません
+      </div>
+    <% end %>
     <h1 class="goshuin-show-title">
       <%= @goshuin.place_name %>
     </h1>
