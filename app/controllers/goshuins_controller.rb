@@ -18,10 +18,26 @@ class GoshuinsController < ApplicationController
       redirect_to goshuins_path, notice: "御朱印を登録しました"
     else
       flash.now[:alert] = "御朱印の登録に失敗しました"
-      render :new, status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
+  def edit
+    @goshuin = current_user.goshuins.find(params[:id])
+  end
+
+  def update
+    @goshuin = current_user.goshuins.find(params[:id])
+    if @goshuin.update(goshuin_params)
+      redirect_to goshuins_path, notice: "御朱印を更新しました"
+    else
+      flash.now[:alert] = "御朱印の更新に失敗しました"
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+  end
   private
 
   def goshuin_params
