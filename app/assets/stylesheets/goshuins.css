@@ -182,3 +182,78 @@
   opacity: 0.85;
   transform: translateY(-2px);
 }
+
+/* 御朱印詳細ページ */
+.goshuin-show-page {
+  min-height: 100vh;
+  background-color: #f7efe3;
+  padding: 56px 24px;
+  color: #3b2f2f;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+.goshuin-show-card {
+  max-width: 640px;
+  margin: 0 auto;
+  background-color: #fffaf0;
+  border: 1px solid #d8c6a4;
+  border-radius: 20px;
+  padding: 48px 40px;
+  box-shadow: 0 10px 24px rgba(59, 47, 47, 0.14);
+}
+
+.goshuin-show-title {
+  text-align: center;
+  font-size: 32px;
+  color: #8b1e1e;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.goshuin-show-item {
+  margin-bottom: 24px;
+  border-bottom: 1px dashed #d8c6a4;
+  padding-bottom: 16px;
+}
+
+.goshuin-show-label {
+  display: block;
+  font-size: 14px;
+  color: #7a6652;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.goshuin-show-value {
+  display: block;
+  font-size: 18px;
+  color: #3b2f2f;
+}
+
+.goshuin-show-memo {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #3b2f2f;
+  white-space: pre-wrap;
+}
+
+.goshuin-show-actions {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.goshuin-back-link {
+  display: inline-block;
+  background-color: #8b1e1e;
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 999px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.goshuin-back-link:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}

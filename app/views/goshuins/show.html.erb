@@ -1,0 +1,26 @@
+<div class="goshuin-show-page">
+  <div class="goshuin-show-card">
+    <h1 class="goshuin-show-title">
+      <%= @goshuin.place_name %>
+    </h1>
+
+    <div class="goshuin-show-item">
+      <span class="goshuin-show-label">参拝日</span>
+      <span class="goshuin-show-value"><%= @goshuin.visited_date %></span>
+    </div>
+
+    <div class="goshuin-show-item">
+      <span class="goshuin-show-label">種類</span>
+      <span class="goshuin-show-value"><%= @goshuin.category.name %></span>
+    </div>
+
+    <div class="goshuin-show-item">
+      <span class="goshuin-show-label">参拝メモ</span>
+      <div class="goshuin-show-memo"><%= @goshuin.memo || "メモはありません"%></div>
+    </div>
+
+    <div class="goshuin-show-actions">
+      <%= link_to "御朱印帳に戻る", goshuins_path, class: "goshuin-back-link" %>
+    </div>
+  </div>
+</div>
