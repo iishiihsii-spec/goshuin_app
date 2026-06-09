@@ -1,0 +1,87 @@
+/* 御朱印登録ページ */
+.goshuin-form-title {
+  text-align: center;
+  font-size: 28px;
+  color: #8b1e1e;
+  margin-bottom: 32px;
+  font-weight: bold;
+}
+
+.goshuin-form-page {
+  min-height: 100vh;
+  background-color: #f7efe3;
+  padding: 56px 24px;
+  color: #3b2f2f;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+.goshuin-form-card {
+  max-width: 560px;
+  margin: 0 auto;
+  background-color: #fffaf0;
+  border: 1px solid #d8c6a4;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 24px rgba(59, 47, 47, 0.14);
+}
+
+.goshuin-form-group {
+  margin-bottom: 24px;
+}
+
+.goshuin-form-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #5c3b22;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.goshuin-form-input,
+.goshuin-form-select,
+.goshuin-form-textarea {
+  width: 100%;
+  border: 1px solid #c9b89f;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 12px 14px;
+  font-size: 16px;
+  color: #3b2f2f;
+  box-sizing: border-box;
+}
+
+.goshuin-form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.goshuin-form-input:focus,
+.goshuin-form-select:focus,
+.goshuin-form-textarea:focus {
+  outline: none;
+  border-color: #8b1e1e;
+  box-shadow: 0 0 0 3px rgba(139, 30, 30, 0.15);
+}
+
+.goshuin-form-submit {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.goshuin-form-submit input {
+  background-color: #8b1e1e;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 40px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  transition: 0.2s;
+}
+
+.goshuin-form-submit input:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}

@@ -1,0 +1,135 @@
+/* 一覧ページ */
+.goshuin-index-page {
+  min-height: 100vh;
+  background-color: #f7efe3;
+  padding: 48px 24px;
+  color: #3b2f2f;
+}
+
+.goshuin-cover {
+  width: 360px;
+  height: 520px;
+  margin: 0 auto 48px;
+  border-radius: 18px;
+  background-image: url("goshuin_cover.png");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 12px 28px rgba(59, 47, 47, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.goshuin-cover-info {
+  background-color: rgba(255, 250, 240, 0.86);
+  padding: 32px 40px;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid #d8c6a4;
+}
+
+.goshuin-cover-user {
+  font-size: 26px;
+  font-weight: bold;
+  color: #8b1e1e;
+  margin-bottom: 16px;
+}
+
+.goshuin-cover-count {
+  font-size: 18px;
+  color: #5c3b22;
+  margin-bottom: 24px;
+}
+
+.goshuin-register-link {
+  display: inline-block;
+}
+
+.goshuin-register-button {
+  display: inline-block;
+  background-color: #8b1e1e;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.goshuin-book-area {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: #fffaf0;
+  border: 1px solid #d8c6a4;
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.goshuin-card-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.goshuin-card {
+  background-color: #fff;
+  border: 1px solid #d8c6a4;
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.goshuin-place-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #8b1e1e;
+  margin-bottom: 16px;
+}
+
+.goshuin-visited-date,
+.goshuin-category,
+.goshuin-memo {
+  margin-bottom: 10px;
+}
+
+.goshuin-empty-message {
+  text-align: center;
+  color: #7a6652;
+  font-weight: bold;
+  padding: 48px 24px;
+}
+/* 一覧ページの画像 */
+.goshuin-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.goshuin-card-image {
+  width: 100%;
+  height: 220px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  border: 1px solid #d8c6a4;
+}
+
+.goshuin-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.goshuin-card-no-image {
+  width: 100%;
+  height: 220px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  border: 1px dashed #d8c6a4;
+  background-color: #fffaf0;
+  color: #7a6652;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
