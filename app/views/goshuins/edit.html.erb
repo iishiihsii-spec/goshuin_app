@@ -36,6 +36,22 @@
         <%= f.text_area :memo, class: "goshuin-edit-textarea" %>
       </div>
 
+      <div class="goshuin-edit-group">
+        <div class="goshuin-edit-label">参拝した場所</div>
+        <p class="goshuin-map-help">地図をクリックして、参拝した場所を変更できます。</p>
+
+        <%= f.hidden_field :latitude, id: "goshuin-latitude" %>
+        <%= f.hidden_field :longitude, id: "goshuin-longitude" %>
+        <div
+          id="goshuin-edit-map"
+          class="goshuin-edit-map"
+          data-latitude="<%= @goshuin.latitude %>"
+          data-longitude="<%= @goshuin.longitude %>"
+          data-place-name="<%= @goshuin.place_name %>">
+        </div>
+      </div>
+
+
       <div class="goshuin-edit-submit">
         <%= f.submit "更新" %>
       </div>
