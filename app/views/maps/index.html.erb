@@ -1,2 +1,12 @@
-<h1>Maps#index</h1>
-<p>Find me in app/views/maps/index.html.erb</p>
+<div class="map-page">
+  <h1>御朱印マップ</h1>
+  <div id="goshuin-all-map"></div>
+  <% @goshuins.each do |goshuin| %>
+  <div
+    class="goshuin-map-data"
+    data-latitude="<%= goshuin.latitude %>"
+    data-longitude="<%= goshuin.longitude %>"
+    data-place-name="<%= goshuin.place_name %>">
+  </div>
+  <% end %>
+</div>

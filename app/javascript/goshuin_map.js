@@ -1,4 +1,4 @@
-const goshuinMap = () => {
+const goshuinFormMap = () => {
   const mapElement = document.getElementById("goshuin-map");
 
   if (!mapElement) return;
@@ -35,7 +35,7 @@ const goshuinMap = () => {
 // 詳細機能
 const goshuinShowMap = () => {
   const showMapElement = document.getElementById("goshuin-show-map");
-  if (!showMapElement) return
+  if (!showMapElement) return;
   const latitude = showMapElement.dataset.latitude;
   const longitude = showMapElement.dataset.longitude;
   const placeName = showMapElement.dataset.placeName;
@@ -53,7 +53,7 @@ const goshuinShowMap = () => {
 // 編集機能 
 const goshuinEditMap = () => {
   const editMapElement = document.getElementById("goshuin-edit-map");
-  if (!editMapElement) return
+  if (!editMapElement) return;
   const latitude = editMapElement.dataset.latitude
   const longitude = editMapElement.dataset.longitude
   const placeName = editMapElement.dataset.placeName
@@ -90,6 +90,29 @@ const goshuinEditMap = () => {
   });
 };
 
-window.addEventListener("turbo:load", goshuinMap);
+// 全体マップ
+const goshuinAllMap = () => {
+  const allMapElement = document.getElementById("goshuin-all-map");
+  if (!allMapElement) return;
+  const goshuinsData = document.querySelectorAll(".goshuin-map-data")
+  
+  const map = L.map(allMapElement).setView([35.681236, 139.767125], 5);
+  
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "&copy; OpenStreetMap contributors"
+  }).addTo(map);
+
+  goshuinsData.forEach((goshuinData) => {
+    const latitude = goshuinData.dataset.latitude;
+    const longitude = goshuinData.dataset.longitude;
+    const placeName = goshuinData.dataset.placeName;
+    if (latitude && longitude) {
+      L.marker([latitude, longitude]).addTo(map).bindPopup(placeName);
+    }
+  });
+};
+
+window.addEventListener("turbo:load", goshuinFormMap);
 window.addEventListener("turbo:load", goshuinShowMap);
-window.addEventListener("turbo:load", goshuinEditMap)
+window.addEventListener("turbo:load", goshuinEditMap);
+window.addEventListener("turbo:load", goshuinAllMap);
