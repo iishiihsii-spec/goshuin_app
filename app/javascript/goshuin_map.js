@@ -106,8 +106,15 @@ const goshuinAllMap = () => {
     const latitude = goshuinData.dataset.latitude;
     const longitude = goshuinData.dataset.longitude;
     const placeName = goshuinData.dataset.placeName;
+    const goshuinUrl = goshuinData.dataset.goshuinUrl;
+    const bindPopupContent = `  
+      <div>
+        <strong>${placeName}</strong>
+        <br>
+        <a href="${goshuinUrl}">詳細を見る</a>
+      </div>`;
     if (latitude && longitude) {
-      L.marker([latitude, longitude]).addTo(map).bindPopup(placeName);
+      L.marker([latitude, longitude]).addTo(map).bindPopup(bindPopupContent);
     }
   });
 };
