@@ -6,7 +6,8 @@
       </div>
 
       <div class="goshuin-cover-count">
-        登録数：<%= @goshuins.count %>件
+        登録数：<%= @goshuin_count %>件
+        Lv.<%= @level %> <%= @level_name %>
       </div>
 
       <%= link_to new_goshuin_path, class: "goshuin-register-link" do %>

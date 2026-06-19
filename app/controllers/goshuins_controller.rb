@@ -2,6 +2,9 @@ class GoshuinsController < ApplicationController
   before_action :authenticate_user!
   def index
     @goshuins = current_user.goshuins.with_attached_image
+    @goshuin_count = @goshuins.count
+    @level = goshuin_level(@goshuin_count)
+    @level_name = goshuin_level_name(@level)
   end
 
   def new
@@ -46,6 +49,43 @@ class GoshuinsController < ApplicationController
     end
   end
   private
+
+   def goshuin_level(count)
+    if count >= 100
+      7
+    elsif count >= 75
+      6
+    elsif count >= 50
+      5
+    elsif count >= 30
+      4
+    elsif count >= 10
+      3
+    elsif count >= 5
+      2
+    else
+      1
+    end
+  end
+
+  def goshuin_level_name(level)
+    case level
+    when 7
+      "御朱印マスター"
+    when 6
+      "御朱印名人"
+    when 5
+      "御朱印達人"
+    when 4
+      "御朱印上級者"
+    when 3
+      "御朱印旅人"
+    when 2
+      "御朱印見習い"
+    else
+      "御朱印初心者"
+    end
+  end
 
   def goshuin_params
     params.require(:goshuin).permit(:place_name, :visited_date, :category_id, :memo, :latitude, :longitude, :image).merge(user_id: current_user.id)
