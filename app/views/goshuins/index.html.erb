@@ -8,6 +8,11 @@
       <div class="goshuin-cover-count">
         登録数：<%= @goshuin_count %>件
         Lv.<%= @level %> <%= @level_name %>
+        <% if @next_level_count == "最大レベルです" %>
+          <%= @next_level_count %>
+        <% else %>
+          次のレベルまであと<%= @next_level_count %>件
+        <% end %>
       </div>
 
       <%= link_to new_goshuin_path, class: "goshuin-register-link" do %>

@@ -1,10 +1,22 @@
 class GoshuinsController < ApplicationController
   before_action :authenticate_user!
+  GOSHUIN_LEVELS = [
+    { level: 7, min_count: 100, name: "御朱印マスター", next_count: nil }, 
+    { level: 6, min_count: 75, name: "御朱印名人", next_count: 100 }, 
+    { level: 5, min_count: 50, name: "御朱印達人", next_count: 75 }, 
+    { level: 4, min_count: 30, name: "御朱印上級者", next_count: 50 }, 
+    { level: 3, min_count: 10, name: "御朱印旅人", next_count: 30 }, 
+    { level: 2, min_count: 5, name: "御朱印見習い", next_count: 10 }, 
+    { level: 1, min_count: 0, name: "御朱印初心者", next_count: 5 }
+  ].freeze
+
   def index
     @goshuins = current_user.goshuins.with_attached_image
     @goshuin_count = @goshuins.count
-    @level = goshuin_level(@goshuin_count)
-    @level_name = goshuin_level_name(@level)
+    @current_level = current_level(@goshuin_count)
+    @level = @current_level[:level]
+    @level_name = @current_level[:name]
+    @next_level_count = next_level_count(@goshuin_count, @current_level)
   end
 
   def new
@@ -50,41 +62,13 @@ class GoshuinsController < ApplicationController
   end
   private
 
-   def goshuin_level(count)
-    if count >= 100
-      7
-    elsif count >= 75
-      6
-    elsif count >= 50
-      5
-    elsif count >= 30
-      4
-    elsif count >= 10
-      3
-    elsif count >= 5
-      2
-    else
-      1
-    end
+  def current_level(count) 
+    GOSHUIN_LEVELS.find { |level| count >= level[:min_count] }
   end
-
-  def goshuin_level_name(level)
-    case level
-    when 7
-      "御朱印マスター"
-    when 6
-      "御朱印名人"
-    when 5
-      "御朱印達人"
-    when 4
-      "御朱印上級者"
-    when 3
-      "御朱印旅人"
-    when 2
-      "御朱印見習い"
-    else
-      "御朱印初心者"
-    end
+  
+  def next_level_count(count, current_level)
+    return "最大レベルです" if current_level[:next_count].nil?
+    current_level[:next_count] - count 
   end
 
   def goshuin_params
