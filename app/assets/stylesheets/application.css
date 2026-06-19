@@ -19,5 +19,6 @@
  *= require goshuins_form
  *= require goshuins_show
  *= require goshuins_edit
+ *= require maps
  *= require_self
  */

@@ -1,0 +1,22 @@
+<div class="map-page">
+  <h1>御朱印マップ</h1>
+  <div id="goshuin-all-map"></div>
+  <% if @goshuins.any? %>
+    <% @goshuins.each do |goshuin| %>
+      <div
+        class="goshuin-map-data"
+        data-latitude="<%= goshuin.latitude %>"
+        data-longitude="<%= goshuin.longitude %>"
+        data-place-name="<%= goshuin.place_name %>"
+        data-goshuin-url="<%= goshuin_path(goshuin) %>">
+      </div>
+    <% end %>
+      <div class="goshuin-map-count">
+        場所が登録されている御朱印：<%= @goshuins.count %>件
+      </div>
+    <% else %>
+      <div class="goshuin-map-count">
+        場所が登録されている御朱印はありません。
+      </div>
+  <% end %>
+</div>

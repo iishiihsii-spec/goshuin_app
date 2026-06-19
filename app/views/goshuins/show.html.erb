@@ -28,6 +28,27 @@
       <div class="goshuin-show-memo"><%= @goshuin.memo || "メモはありません"%></div>
     </div>
 
+    <% if @goshuin.latitude.present? && @goshuin.longitude.present? %>
+      <div class="goshuin-show-item">
+        <span class="goshuin-show-label">参拝した場所</span>
+
+        <div
+          id="goshuin-show-map"
+          class="goshuin-show-map"
+          data-latitude="<%= @goshuin.latitude %>"
+          data-longitude="<%= @goshuin.longitude %>"
+          data-place-name="<%= @goshuin.place_name %>">
+        </div>
+      </div>
+    <% else %>
+      <div class="goshuin-show-item">
+        <span class="goshuin-show-label">参拝した場所</span>
+        <div class="goshuin-show-no-map">
+          参拝場所は登録されていません
+        </div>
+      </div>
+    <% end %>
+
     <div class="goshuin-show-actions">
       <%= link_to "編集する", edit_goshuin_path(@goshuin), class: "goshuin-edit-link" %>
     </div>

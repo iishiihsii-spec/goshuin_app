@@ -48,6 +48,6 @@ class GoshuinsController < ApplicationController
   private
 
   def goshuin_params
-    params.require(:goshuin).permit(:place_name, :visited_date, :category_id, :memo, :image).merge(user_id: current_user.id)
+    params.require(:goshuin).permit(:place_name, :visited_date, :category_id, :memo, :latitude, :longitude, :image).merge(user_id: current_user.id)
   end
 end

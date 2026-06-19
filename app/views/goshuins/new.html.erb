@@ -27,6 +27,15 @@
         <%= f.text_area :memo, class: "goshuin-form-textarea" %>
       </div>
 
+      <div class="goshuin-form-group">
+        <div class="goshuin-form-label">参拝した場所</div>
+        <p class="goshuin-map-help">地図をクリックして、参拝した場所を選択してください。</p>
+
+        <%= f.hidden_field :latitude, id: "goshuin-latitude" %>
+        <%= f.hidden_field :longitude, id: "goshuin-longitude" %>
+        <div id="goshuin-map" class="goshuin-form-map"></div>
+      </div>
+
       <div class="goshuin-form-submit">
         <%= f.submit "登録" %>
       </div>
