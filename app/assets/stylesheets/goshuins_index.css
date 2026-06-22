@@ -22,7 +22,7 @@
 }
 
 .goshuin-cover-info {
-  background-color: rgba(255, 250, 240, 0.86);
+  background-color: rgba(253, 253, 253, 0.9);
   padding: 32px 40px;
   border-radius: 20px;
   text-align: center;
@@ -36,11 +36,84 @@
   margin-bottom: 16px;
 }
 
-.goshuin-cover-count {
-  font-size: 18px;
-  color: #5c3b22;
-  margin-bottom: 24px;
+.goshuin-level-card {
+  margin: 20px auto;
+  padding: 18px 20px;
+  max-width: 360px;
+  text-align: center;
 }
+
+.goshuin-level-title {
+  font-size: 14px;
+  color: #7a6652;
+  margin-bottom: 8px;
+}
+
+/* .goshuin-level-badge {
+  display: inline-block;
+  padding: 8px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #8d2d28, #c98b4b);
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  box-shadow: 0 6px 14px rgba(90, 40, 30, 0.2);
+  margin-bottom: 5px;
+} */
+
+.goshuin-level-main {
+  font-size: 15px;
+  padding: 10px;
+  font-weight: bold;
+  color: #8a5a2b;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: solid 1px grey;
+}
+
+.goshuin-level-main.level-1 {
+  background-image: url("level_badge_1.png");
+}
+
+.goshuin-level-main.level-2 {
+  background-image: url("level_badge_2.png");
+}
+
+.goshuin-level-main.level-3 {
+  background-image: url("level_badge_3.png");
+}
+
+.goshuin-level-main.level-4 {
+  background-image: url("level_badge_4.png");
+}
+
+.goshuin-level-main.level-5 {
+  background-image: url("level_badge_5.png");
+}
+
+.goshuin-level-main.level-6 {
+  background-image: url("level_badge_6.png");
+}
+
+.goshuin-level-main.level-7 {
+  background-image: url("level_badge_7.png");
+}
+
+
+.goshuin-level-count {
+  font-size: 15px;
+  color: #8a5a2b;
+  margin-bottom: 6px;
+}
+
+.goshuin-next-level {
+  font-size: 14px;
+  color: #8a5a2b;
+}
+
 
 .goshuin-register-link {
   display: inline-block;

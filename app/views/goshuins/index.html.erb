@@ -5,8 +5,22 @@
         <%= current_user.nickname %>さんの御朱印帳
       </div>
 
-      <div class="goshuin-cover-count">
-        登録数：<%= @goshuins.count %>件
+      <div class="goshuin-level-card">
+        <div class="goshuin-level-main level-<%= @level %>">
+          Lv.<%= @level %>  <%= @level_name %>
+        </div>
+
+        <div class="goshuin-level-count">
+          登録数：<%= @goshuin_count %>件
+        </div>
+
+        <div class="goshuin-next-level">
+          <% if @next_level_count == "最大レベルです" %>
+            <%= @next_level_count %>
+          <% else %>
+            次のレベルまであと<%= @next_level_count %>件
+          <% end %>
+        </div>
       </div>
 
       <%= link_to new_goshuin_path, class: "goshuin-register-link" do %>
