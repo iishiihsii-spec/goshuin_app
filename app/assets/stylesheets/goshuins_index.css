@@ -36,11 +36,49 @@
   margin-bottom: 16px;
 }
 
-.goshuin-cover-count {
-  font-size: 18px;
-  color: #5c3b22;
-  margin-bottom: 24px;
+.goshuin-level-card {
+  margin: 20px auto;
+  padding: 18px 20px;
+  max-width: 360px;
+  text-align: center;
 }
+
+.goshuin-level-title {
+  font-size: 14px;
+  color: #7a6652;
+  margin-bottom: 8px;
+}
+
+.goshuin-level-badge {
+  display: inline-block;
+  padding: 8px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #8d2d28, #c98b4b);
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  box-shadow: 0 6px 14px rgba(90, 40, 30, 0.2);
+}
+
+.goshuin-level-name {
+  font-size: 22px;
+  padding: 10px;
+  font-weight: bold;
+  color: #5a3e2b;
+  margin-bottom: 10px;
+}
+
+.goshuin-level-count {
+  font-size: 15px;
+  color: #8a5a2b;
+  margin-bottom: 6px;
+}
+
+.goshuin-next-level {
+  font-size: 14px;
+  color: #8a5a2b;
+}
+
 
 .goshuin-register-link {
   display: inline-block;
