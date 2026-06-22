@@ -1,0 +1,2 @@
+class UserStamp < ApplicationRecord
+end
