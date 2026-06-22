@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2026_06_09_055757) do
+ActiveRecord::Schema[7.1].define(version: 2026_06_22_132649) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -52,6 +52,26 @@ ActiveRecord::Schema[7.1].define(version: 2026_06_09_055757) do
     t.index ["user_id"], name: "index_goshuins_on_user_id"
   end
 
+  create_table "stamps", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description", null: false
+    t.integer "rarity_id", null: false
+    t.string "icon", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_stamps", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "stamp_id", null: false
+    t.integer "quantity", default: 1, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["stamp_id"], name: "index_user_stamps_on_stamp_id"
+    t.index ["user_id", "stamp_id"], name: "index_user_stamps_on_user_id_and_stamp_id", unique: true
+    t.index ["user_id"], name: "index_user_stamps_on_user_id"
+  end
+
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
@@ -68,4 +88,6 @@ ActiveRecord::Schema[7.1].define(version: 2026_06_09_055757) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "goshuins", "users"
+  add_foreign_key "user_stamps", "stamps"
+  add_foreign_key "user_stamps", "users"
 end
