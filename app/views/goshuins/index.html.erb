@@ -5,13 +5,9 @@
         <%= current_user.nickname %>さんの御朱印帳
       </div>
 
-      <div class="goshuin-level-card level-<%= @level %>">
-        <%# <div class="goshuin-level-title">現在の称号</div> %>
-        <div class="goshuin-level-badge">
-          Lv.<%= @level %> 
-        </div>
-        <div class="goshuin-level-name">
-          <%= @level_name %>
+      <div class="goshuin-level-card">
+        <div class="goshuin-level-main level-<%= @level %>">
+          Lv.<%= @level %>  <%= @level_name %>
         </div>
 
         <div class="goshuin-level-count">
