@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   # アソシエーション
   has_many :goshuins
-  # has_many :user_stamps
-  # has_many :stamps, through: :user_stamps
+  has_many :user_stamps
+  has_many :stamps, through: :user_stamps
 
 end
