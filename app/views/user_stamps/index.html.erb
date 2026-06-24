@@ -1,0 +1,15 @@
+
+<h1>所持スタンプ一覧</h1>
+
+<% if @user_stamps.any? %>
+  <% @user_stamps.each do |user_stamp| %>
+    <div>
+      <%= image_tag "stamps/#{user_stamp.stamp.icon}", alt: user_stamp.stamp.name, class: "stamp-image" %>
+      <p>スタンプ名：<%= user_stamp.stamp.name %></p>
+      <p>レアリティ：<%= user_stamp.stamp.rarity_id %></p>
+      <p>所持数：<%= user_stamp.quantity %>枚</p>
+    </div>
+  <% end %>
+<% else %>
+  <p>まだスタンプを持っていません。</p>
+<% end %>
