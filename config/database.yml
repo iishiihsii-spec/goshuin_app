@@ -50,6 +50,5 @@ test:
 #
 production:
   <<: *default
-  database: goshuin_app_production
-  username: goshuin_app
-  password: <%= ENV["GOSHUIN_APP_DATABASE_PASSWORD"] %>
+  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %>
