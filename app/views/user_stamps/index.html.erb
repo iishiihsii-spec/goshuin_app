@@ -11,7 +11,8 @@
 
           <div class="stamp-info">
             <h2 class="stamp-name"><%= user_stamp.stamp.name %></h2>
-            <p class="stamp-rarity">レアリティ：<%= user_stamp.stamp.rarity_id %></p>
+            <p class="stamp-rarity">レアリティ：<%= user_stamp.stamp.rarity_name %></p>
+            <div class="stamp-rarity rarity-<%= user_stamp.stamp.rarity_id%>"></div>
             <p class="stamp-quantity">所持数：<%= user_stamp.quantity %>枚</p>
           </div>
         </div>
