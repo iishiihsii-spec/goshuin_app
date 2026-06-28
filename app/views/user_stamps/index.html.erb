@@ -1,0 +1,24 @@
+<div class="user-stamps-page">
+  <h1 class="user-stamps-title">所持スタンプ一覧</h1>
+
+  <% if @user_stamps.any? %>
+    <div class="stamp-list">
+      <% @user_stamps.each do |user_stamp| %>
+        <div class="stamp-card">
+          <div class="stamp-image-area">
+            <%= image_tag "stamps/#{user_stamp.stamp.icon}", alt: user_stamp.stamp.name, class: "stamp-image" %>
+          </div>
+
+          <div class="stamp-info">
+            <h2 class="stamp-name"><%= user_stamp.stamp.name %></h2>
+            <p class="stamp-rarity">レアリティ：<%= user_stamp.stamp.rarity_name %></p>
+            <div class="stamp-rarity rarity-<%= user_stamp.stamp.rarity_id%>"></div>
+            <p class="stamp-quantity">所持数：<%= user_stamp.quantity %>枚</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p class="stamp-empty-message">まだスタンプを持っていません。</p>
+  <% end %>
+</div>

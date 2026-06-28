@@ -1,0 +1,72 @@
+.user-stamps-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  background-color: #fffaf2;
+  min-height: 100vh;
+}
+
+.user-stamps-title {
+  text-align: center;
+  margin-bottom: 36px;
+  font-size: 32px;
+  color: #5a3525;
+  letter-spacing: 0.08em;
+}
+
+.stamp-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.stamp-card {
+  background: #fff;
+  border: 1px solid #e6d3b3;
+  border-radius: 18px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 18px rgba(90, 53, 37, 0.12);
+}
+
+.stamp-image-area {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff7e8;
+  border-radius: 16px;
+}
+
+.stamp-image {
+  max-width: 130px;
+  max-height: 130px;
+  object-fit: contain;
+}
+
+.stamp-name {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #5a3525;
+}
+
+.stamp-rarity,
+.stamp-quantity {
+  margin: 6px 0;
+  font-size: 15px;
+  color: #6f5140;
+}
+
+.stamp-quantity {
+  font-weight: bold;
+  color: #9a4b2f;
+}
+
+.stamp-empty-message {
+  text-align: center;
+  font-size: 18px;
+  color: #6f5140;
+  margin-top: 40px;
+}
