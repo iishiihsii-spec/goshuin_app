@@ -1,6 +1,10 @@
 <div class="user-stamps-page">
   <h1 class="user-stamps-title">所持スタンプ一覧</h1>
 
+    <p class="user-stamps-description">
+    ※現在はスタンプ機能の実装イメージです。今後、御朱印登録時にランダムでスタンプを獲得できる機能を追加予定です。
+    </p>
+
   <% if @user_stamps.any? %>
     <div class="stamp-list">
       <% @user_stamps.each do |user_stamp| %>
